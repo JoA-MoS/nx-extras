@@ -26,15 +26,7 @@
       }
     ]
   },
-  "projects": {
-    "ava": {
-      "tags": []
-    },
-    "ava-e2e": {
-      "tags": [],
-      "implicitDependencies": ["ava"]
-    }
-  },
+  "projects": {},
   "workspaceLayout": {
     "appsDir": "e2e",
     "libsDir": "packages"

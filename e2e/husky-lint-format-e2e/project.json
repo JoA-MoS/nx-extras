@@ -1,0 +1,16 @@
+{
+  "root": "e2e/husky-lint-format-e2e",
+  "projectType": "application",
+  "sourceRoot": "e2e/husky-lint-format-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/nx-plugin:e2e",
+      "options": {
+        "target": "husky-lint-format:build",
+        "jestConfig": "e2e/husky-lint-format-e2e/jest.config.js"
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["husky-lint-format"]
+}

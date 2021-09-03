@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "name": "mocha",
+  "version": "0.0.1",
+  "generators": {
+    "mocha": {
+      "factory": "./src/generators/mocha/generator",
+      "schema": "./src/generators/mocha/schema.json",
+      "description": "mocha generator"
+    }
+  }
+}

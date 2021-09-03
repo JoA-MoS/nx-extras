@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "name": "husky-lint-format",
+  "version": "0.0.1",
+  "generators": {
+    "husky-lint-format": {
+      "factory": "./src/generators/husky-lint-format/generator",
+      "schema": "./src/generators/husky-lint-format/schema.json",
+      "description": "husky-lint-format generator"
+    }
+  }
+}

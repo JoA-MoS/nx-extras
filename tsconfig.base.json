@@ -15,6 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@nx-extras/husky-lint-format": [
+        "packages/husky-lint-format/src/index.ts"
+      ],
+      "@nx-extras/mocha": ["packages/mocha/src/index.ts"],
       "nx-extras/ava": ["packages/ava/src/index.ts"]
     }
   },

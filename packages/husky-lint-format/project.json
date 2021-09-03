@@ -1,0 +1,55 @@
+{
+  "root": "packages/husky-lint-format",
+  "sourceRoot": "packages/husky-lint-format/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["packages/husky-lint-format/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/husky-lint-format"],
+      "options": {
+        "jestConfig": "packages/husky-lint-format/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "build": {
+      "executor": "@nrwl/node:package",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/husky-lint-format",
+        "tsConfig": "packages/husky-lint-format/tsconfig.lib.json",
+        "packageJson": "packages/husky-lint-format/package.json",
+        "main": "packages/husky-lint-format/src/index.ts",
+        "assets": [
+          "packages/husky-lint-format/*.md",
+          {
+            "input": "./packages/husky-lint-format/src",
+            "glob": "**/!(*.ts)",
+            "output": "./src"
+          },
+          {
+            "input": "./packages/husky-lint-format/src",
+            "glob": "**/*.d.ts",
+            "output": "./src"
+          },
+          {
+            "input": "./packages/husky-lint-format",
+            "glob": "generators.json",
+            "output": "."
+          },
+          {
+            "input": "./packages/husky-lint-format",
+            "glob": "executors.json",
+            "output": "."
+          }
+        ]
+      }
+    }
+  },
+  "tags": []
+}

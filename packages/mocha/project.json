@@ -1,0 +1,55 @@
+{
+  "root": "packages/mocha",
+  "sourceRoot": "packages/mocha/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["packages/mocha/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/mocha"],
+      "options": {
+        "jestConfig": "packages/mocha/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "build": {
+      "executor": "@nrwl/node:package",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/mocha",
+        "tsConfig": "packages/mocha/tsconfig.lib.json",
+        "packageJson": "packages/mocha/package.json",
+        "main": "packages/mocha/src/index.ts",
+        "assets": [
+          "packages/mocha/*.md",
+          {
+            "input": "./packages/mocha/src",
+            "glob": "**/!(*.ts)",
+            "output": "./src"
+          },
+          {
+            "input": "./packages/mocha/src",
+            "glob": "**/*.d.ts",
+            "output": "./src"
+          },
+          {
+            "input": "./packages/mocha",
+            "glob": "generators.json",
+            "output": "."
+          },
+          {
+            "input": "./packages/mocha",
+            "glob": "executors.json",
+            "output": "."
+          }
+        ]
+      }
+    }
+  },
+  "tags": []
+}

@@ -1,0 +1,55 @@
+{
+  "root": "packages/ava",
+  "sourceRoot": "packages/ava/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["packages/ava/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/ava"],
+      "options": {
+        "jestConfig": "packages/ava/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "build": {
+      "executor": "@nrwl/node:package",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/ava",
+        "tsConfig": "packages/ava/tsconfig.lib.json",
+        "packageJson": "packages/ava/package.json",
+        "main": "packages/ava/src/index.ts",
+        "assets": [
+          "packages/ava/*.md",
+          {
+            "input": "./packages/ava/src",
+            "glob": "**/!(*.ts)",
+            "output": "./src"
+          },
+          {
+            "input": "./packages/ava/src",
+            "glob": "**/*.d.ts",
+            "output": "./src"
+          },
+          {
+            "input": "./packages/ava",
+            "glob": "generators.json",
+            "output": "."
+          },
+          {
+            "input": "./packages/ava",
+            "glob": "executors.json",
+            "output": "."
+          }
+        ]
+      }
+    }
+  },
+  "tags": []
+}
