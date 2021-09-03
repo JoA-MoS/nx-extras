@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "name": "ava",
+  "version": "0.0.1",
+  "generators": {
+    "ava": {
+      "factory": "./src/generators/ava/generator",
+      "schema": "./src/generators/ava/schema.json",
+      "description": "ava generator"
+    }
+  }
+}
